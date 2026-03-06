@@ -78,8 +78,6 @@ Refer to [CoverageBroadcast.java](./java_class/CoverageBroadcast.java)
 #### Step-3 Add Broadcast Receiver
 Add a receiver for manual coverage dump.
 
-tips:change the "com.example.pkg" to the true package
-
 ```xml
 <receiver android:name=".CoverageBroadcast" android:exported="true">
     <intent-filter>
