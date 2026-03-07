@@ -125,6 +125,12 @@ if (BuildConfig.DEBUG) {
 }
 ```
 
+And we need to add permission when we install the apk.
+
+```shell
+adb -s ' + $DEVICE + ' install -r -g ' + $app_path
+```
+
 <br/>
 
 #### Step-5 Add Root Gradle Script
