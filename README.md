@@ -69,7 +69,7 @@ It is recommended that EC files be managed at external storage.
 #### Step-2 Add Broadcast Code
 The Broadcast to trigger coverage dump of Jacoco.
 
-tips:add the true package on the head of the CoverageBroadcasta.java
+tips:add the true package on the head of the CoverageBroadcast.java
 
 Refer to [CoverageBroadcast.java](./java_class/CoverageBroadcast.java)
 
@@ -109,6 +109,19 @@ override fun onTrimMemory(level: Int) {
     Log.d("CoverageJacoco", "Application onTrimMemory!")
     CoverageBroadcast.dumpCoverageData(this, "trim", false)
     super.onTrimMemory(level)
+}
+```
+
+And we need to register the receiver in the Application class, inside the onCreate() method.
+
+```kotlin
+# Kotlin Version
+import android.content.IntentFilter
+if (BuildConfig.DEBUG) {
+    val coverageReceiver = CoverageBroadcast()
+    val filter = IntentFilter("com.example.pkg.Coverage_Jacoco")
+    registerReceiver(coverageReceiver, filter)
+    Log.d("CoverageJacoco", "Coverage_Jacoco receiver registered")
 }
 ```
 
