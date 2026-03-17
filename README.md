@@ -131,6 +131,8 @@ And we need to add permission when we install the apk.
 adb -s ' + $DEVICE + ' install -r -g ' + $app_path
 ```
 
+If the app don't have the application class. Then we need to build the application class and add it in the AndroidManifest.xml.
+
 <br/>
 
 #### Step-5 Add Root Gradle Script
