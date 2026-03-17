@@ -183,6 +183,8 @@ Sync the Gradle project, and then build the instrumented APK.
 #### Step-10 Generate Coverage Dirs
 Run the `Task saveCoverageDirs` under `root_jacoco.gradle`, you will get a JSON file recording the important Dirs for the later Jacoco coverage report generation.
 
+./gradlew saveCoverageDirs --no-configuration-cache
+
 <br/>
 
 #### Step-11 Get EC Files
