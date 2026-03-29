@@ -69,7 +69,7 @@ It is recommended that EC files be managed at external storage.
 #### Step-2 Add Broadcast Code
 The Broadcast to trigger coverage dump of Jacoco.
 
-tips:add the true package on the head of the CoverageBroadcast.java
+tips:add the true package(can be found in the AndroidManifest.xml package) on the head of the CoverageBroadcast.java
 
 Refer to [CoverageBroadcast.java](./java_class/CoverageBroadcast.java)
 
