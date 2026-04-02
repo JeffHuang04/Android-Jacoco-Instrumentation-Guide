@@ -79,7 +79,7 @@ task saveCoverageDirs {
                     }
                 }
                 // built_in_kotlinc 兼容新版
-                def kotlinBaseDir = new File("${project.buildDir}/intermediates/classes/built_in_kotlinc")
+                kotlinBaseDir = new File("${project.buildDir}/intermediates/classes/built_in_kotlinc")
                 if (kotlinBaseDir.exists()) {
                     kotlinBaseDir.eachFileRecurse { file ->
                         if (file.isDirectory() && file.name == 'classes') {
