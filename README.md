@@ -114,6 +114,20 @@ override fun onTrimMemory(level: Int) {
 
 And we need to register the receiver in the Application class, inside the onCreate() method.
 
+```java
+import android.content.IntentFilter;
+import android.util.Log;
+if (BuildConfig.DEBUG) {
+    CoverageBroadcast coverageReceiver = new CoverageBroadcast();
+    IntentFilter filter = new IntentFilter("com.example.pkg.Coverage_Jacoco");
+
+    // 在 Application 中直接调用 registerReceiver
+    registerReceiver(coverageReceiver, filter);
+
+    Log.d("CoverageJacoco", "Coverage_Jacoco receiver registered");
+}
+```
+
 ```kotlin
 # Kotlin Version
 import android.content.IntentFilter
