@@ -165,6 +165,9 @@ plugins {
 }
 # It is recommended to put it just after the plugins.
 apply from: 'root_jacoco.gradle'
+
+#.kt
+apply(from = "root_jacoco.gradle")
 ```
 
 <br/>
@@ -185,6 +188,9 @@ plugins {
 }
 # It is recommended to put it just after the plugins.
 apply from: 'app_jacoco.gradle'
+
+#.kt
+apply(from = "app_jacoco.gradle")
 ```
 
 <br/>
