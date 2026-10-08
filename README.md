@@ -1,4 +1,18 @@
 # Android Jacoco Instrumentation Guide (v202503)
+## 0 Setup
+add the mirror for every build
+mkdir -p ~/.gradle/init.d
+cat > ~/.gradle/init.d/mirrors.gradle <<'EOF'
+def addMirrors = { RepositoryHandler r ->
+    r.maven { name 'AliyunGoogle'; url 'https://maven.aliyun.com/repository/google' }
+    r.maven { name 'AliyunPublic'; url 'https://maven.aliyun.com/repository/public' }
+    r.maven { name 'AliyunPlugin'; url 'https://maven.aliyun.com/repository/gradle-plugin' }
+}
+beforeSettings { settings ->
+    addMirrors(settings.pluginManagement.repositories)
+    addMirrors(settings.dependencyResolutionManagement.repositories)
+}
+EOF
 ## 1 Introduction
 Instrumenting Android apps has always been a big headache:
 
@@ -51,7 +65,6 @@ Since the components associated with Android apps are so numerous and change so 
 
 
 <br/>
-
 
 
 ## 4 Instrumentation Detail
@@ -217,6 +230,7 @@ There are two ways you can get the coverage EC files with our instrumentation:
 
 #### Step-12 Generate Jacoco Report
 Put the EC files under `build/outputs/code-coverage` of the app module, then run the `Task jacocoTestReport` under `app_jacoco.gradle`, and you will get the Jacoco report under `build/reports`
+
 
 
 
