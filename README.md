@@ -190,6 +190,8 @@ Add a Gradle script to the app module for Jacoco report generation.
 
 Refer to [app_jacoco.gradle](./gradle_scripts/app_jacoco.gradle)
 
+Caution: there may be a duplicate-named task - jacocotest
+
 <br/>
 
 #### Step-8 Include App Gradle Script
