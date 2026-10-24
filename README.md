@@ -151,7 +151,18 @@ if (BuildConfig.DEBUG) {
     Log.d("CoverageJacoco", "Coverage_Jacoco receiver registered")
 }
 ```
-
+if sdk >= 34
+```kotlin
+import androidx.core.content.ContextCompat
+import android.content.IntentFilter
+...
+if (BuildConfig.DEBUG) {
+    val coverageReceiver = CoverageBroadcast()
+    val filter = IntentFilter("com.example.pkg.Coverage_Jacoco")
+    ContextCompat.registerReceiver(this, coverageReceiver, filter, ContextCompat.RECEIVER_EXPORTED)
+    Log.d("CoverageJacoco", "Coverage_Jacoco receiver registered")
+}
+```
 And we need to add permission when we install the apk.
 
 ```shell
